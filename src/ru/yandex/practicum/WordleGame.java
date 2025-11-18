@@ -81,11 +81,6 @@ public class WordleGame {
     }
 
     public String generateHint() {
-
-        if (this.dictionary.getEnteredOptions().isEmpty()) {
-            return dictionary.getRandomWord();
-        }
-
         return this.dictionary.getHint();
     }
 

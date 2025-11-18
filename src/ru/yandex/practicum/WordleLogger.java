@@ -30,13 +30,16 @@ public class WordleLogger {
             }
 
         } else {
-
-            try (Writer writer = new BufferedWriter(new FileWriter(path.toString()))) {
-
+            try {
                 Files.createFile(path);
 
-                writer.write(String.format("%s: %s",type.getType(), message));
+                try (Writer writer = new BufferedWriter(new FileWriter(path.toString()))) {
 
+                    writer.write(String.format("%s: %s",type.getType(), message));
+
+                } catch (IOException exception) {
+                    throw new WorldFileException(exception.getMessage());
+                }
             } catch (IOException exception) {
                 throw new WorldFileException(exception.getMessage());
             }

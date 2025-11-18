@@ -132,9 +132,9 @@ class WordleDictionaryTest {
 
         dictionary.createMask(guest, answer);
 
-        Map<Character, Integer> charactersPosition = dictionary.getCharactersPosition();
+        Map<Integer, Character> charactersPosition = dictionary.getCharactersPosition();
 
-        Assertions.assertNotEquals(1, (int) charactersPosition.get('а'),
+        Assertions.assertNotEquals('a', (int) charactersPosition.get(1),
                 "Данное слово не подходит по буквам и позициям на них");
     }
 

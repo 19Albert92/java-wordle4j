@@ -18,7 +18,7 @@ public class WordleDictionary {
 
     private final LinkedHashMap<String, List<String>> enteredOptions;
 
-    private final Map<Character, Integer> charactersPosition;
+    private final Map<Integer, Character> charactersPosition;
 
     private final Set<Character> charactersForbidden;
 
@@ -65,12 +65,12 @@ public class WordleDictionary {
         return true;
     }
 
-    private boolean isPosition(String word, Map<Character, Integer> charactersPosition) {
-        for (Map.Entry<Character, Integer> entry : charactersPosition.entrySet()) {
-            char requiredChar = entry.getKey();
-            int position = entry.getValue();
+    private boolean isPosition(String word, Map<Integer, Character> charactersPosition) {
+        for (Map.Entry<Integer, Character> entry : charactersPosition.entrySet()) {
+            int requiredChar = entry.getKey();
+            char position = entry.getValue();
 
-            if (word.charAt(position) != requiredChar) {
+            if (word.charAt(requiredChar) != position) {
                 return false;
             }
         }
@@ -129,7 +129,7 @@ public class WordleDictionary {
 
             if (guessChar == answer.charAt(i)) {
                 sb.append("+");
-                charactersPosition.put(guessChar, i);
+                charactersPosition.put(i, guessChar);
                 charactersRequired.add(guessChar);
             } else if (guessChar != answer.charAt(i) && answer.indexOf(guessChar) >= 0) {
                 sb.append("^");
@@ -155,9 +155,11 @@ public class WordleDictionary {
         }
 
         List<String> tipsList = enteredOptions.lastEntry().getValue();
+
         if (tipsList.isEmpty()) {
             throw new DictionaryEmptyException("Dictionary is empty");
         }
+
         return tipsList.get(random.nextInt(tipsList.size()));
     }
 
@@ -172,7 +174,7 @@ public class WordleDictionary {
         return words;
     }
 
-    public Map<Character, Integer> getCharactersPosition() {
+    public Map<Integer, Character> getCharactersPosition() {
         return charactersPosition;
     }
 
