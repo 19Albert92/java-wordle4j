@@ -47,10 +47,6 @@ public class WordleGame {
         }
     }
 
-    private String compareWords(String guess) {
-        return dictionary.createMask(guess, answer);
-    }
-
     private boolean isWinningGuess(String guess) {
         return answer.equals(guess);
     }
@@ -75,7 +71,7 @@ public class WordleGame {
 
         this.steps++;
 
-        System.out.println(compareWords(normalizeUserWord));
+        dictionary.createMask(normalizeUserWord, answer);
 
         return isWinningGuess(normalizeUserWord);
     }
