@@ -23,7 +23,7 @@ public class Wordle {
 
     public static void main(String[] args) {
 
-        try(PrintWriter logger = WordleLogger.createFileLogger("log.txt")) {
+        try (PrintWriter logger = WordleLogger.createFileLogger("log.txt")) {
 
             WordleDictionaryLoader loader = new WordleDictionaryLoader(logger);
 

@@ -96,8 +96,6 @@ class WordleDictionaryTest {
 
         Set<Character> charactersRequired = dictionary.getCharactersRequired();
 
-        System.out.println(charactersRequired);
-
         Assertions.assertEquals(3, charactersRequired.size(),
                 "В данном слове емеются 3 обязательные буквы");
 

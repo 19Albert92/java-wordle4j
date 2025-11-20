@@ -33,5 +33,4 @@ class WordleDictionaryLoaderTest {
 
         assertFalse(wordsList.isEmpty(), "Список слов из полученный из фала не должен быть пустым");
     }
-
 }

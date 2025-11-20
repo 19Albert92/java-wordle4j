@@ -46,7 +46,6 @@ class WordleGameTest {
     void testShouldThrowWhenWordNotInDictionary() {
         String guess = "бекаа";
 
-
         Assertions.assertThrows(WordNotFoundInDictionaryException.class, () -> game.checkWord(guess),
                 "Должна вернуться ошибка так как такого слово нет в словаре");
     }
