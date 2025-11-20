@@ -1,0 +1,5 @@
+[gaming]: Введенное слово должно состоять только из русских символов
+[gaming]: Такого слово нет в нашем словаре!
+[gaming]: Такого слово нет в нашем словаре!
+[gaming]: Введенное слово должно состоять только из русских символов
+words_rus.txt (No such file or directory)words_rus.txt (No such file or directory)words_rus.txt (No such file or directory)words_rus.txt (No such file or directory)
