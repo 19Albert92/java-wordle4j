@@ -68,6 +68,7 @@ public class WordleGame {
     }
 
     public void checkWord(String checkedWord) throws InvalidUserInputException, WordFormatException, WordNotFoundInDictionaryException {
+
         analyzeUserWordByLength(checkedWord);
 
         analyzeUserWordByFormat(checkedWord);
@@ -87,6 +88,11 @@ public class WordleGame {
             checkedWord = dictionary.normalize(userWord);
 
             checkWord(checkedWord);
+        }
+
+        if (checkedWord.isEmpty()) {
+            logger.println("После преобразования слово пустое!");
+            throw new RuntimeException();
         }
 
         System.out.println(dictionary.createMask(checkedWord, answer));
