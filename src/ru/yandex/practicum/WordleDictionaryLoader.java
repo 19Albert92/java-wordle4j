@@ -33,7 +33,7 @@ public class WordleDictionaryLoader {
 
         try (BufferedReader br = new BufferedReader(new FileReader(dictionaryPath.toString(), charset))) {
 
-            while(br.ready()) {
+            while (br.ready()) {
                 String word = br.readLine();
                 if (word.length() == 5) {
                     words.add(word);
