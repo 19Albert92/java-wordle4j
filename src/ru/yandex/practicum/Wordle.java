@@ -39,7 +39,7 @@ public class Wordle {
 
         showGreetingText();
 
-        while(game.isEnd()) {
+        while (game.isEnd()) {
 
             try {
                 game.showAttemptsWithNumber();
